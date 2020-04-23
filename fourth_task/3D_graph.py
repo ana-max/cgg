@@ -63,7 +63,8 @@ class Graph(QWidget):
         self.max_y, self.min_y = max(self.max_y, yy), min(self.min_y, yy)
 
     def draw_lines_x(self, qp: QPainter):
-        top, bottom = self.get_initial_top_and_bottom()
+        n = self.width() + 1
+        top, bottom = [self.height()] * n, [0] * n
         for i in range(self.primary_step):
             x = self.x_with_step(i, self.primary_step)
             for j in range(self.secondary_step):
@@ -71,16 +72,13 @@ class Graph(QWidget):
                 self.draw_point(x, y, top, bottom, qp)
 
     def draw_lines_y(self, qp: QPainter):
-        top, bottom = self.get_initial_top_and_bottom()
+        n = self.width() + 1
+        top, bottom = [self.height()] * n, [0] * n
         for i in range(self.primary_step):
             y = self.y_with_step(i, self.primary_step)
             for j in range(self.secondary_step):
                 x = self.x_with_step(j, self.secondary_step)
                 self.draw_point(x, y, top, bottom, qp)
-
-    def get_initial_top_and_bottom(self):
-        n = self.width() + 1
-        return [self.height()] * n, [0] * n
 
     def draw_point(self, x, y, top, bottom, qp: QPainter):
         z = self.function(x, y)
