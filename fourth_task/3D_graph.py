@@ -8,9 +8,9 @@ import math
 
 Point = namedtuple('Point', 'x y')
 
+
 def func1(x, y):
-    return math.sqrt(x*x + y*y) + \
-           5*math.cos(math.sqrt(x*x + y*y))
+    return math.cos(x*y)
 
 
 class Graph(QWidget):
