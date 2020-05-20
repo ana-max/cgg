@@ -17,7 +17,6 @@ class Ellipse(QWidget):
     def init_ui(self):
         self.setGeometry(250, 150, 600, 480)
         self.setWindowTitle('Function\'s Graphic. Ellipse')
-        self.show()
 
     def rotate_x(self, x, y):
         return x + y
@@ -62,10 +61,11 @@ class Ellipse(QWidget):
     def draw_lines(self, qp, previous_point, current_point):
         qp.drawLine(previous_point, current_point)
 
+
 def main():
     app = QApplication(sys.argv)
     ellipse = Ellipse(-10, -30, 2000)
-
+    ellipse.show()
     app.exec_()
 
 
