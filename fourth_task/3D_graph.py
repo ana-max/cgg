@@ -10,7 +10,7 @@ Point = namedtuple('Point', 'x y')
 
 
 def func1(x, y):
-    return math.cos(x*y)
+    return abs(math.sqrt(100 - x*x - y*y))
 
 
 class Graph(QWidget):
