@@ -21,7 +21,6 @@ class IndependentScaleGraph(QWidget):
     def init_ui(self):
         self.setGeometry(250, 150, 600, 480)
         self.setWindowTitle('Function\'s Graphic. Independent Scale')
-        self.show()
 
     def independent_scale(self, qp):
         max_x = self.width()
@@ -71,6 +70,7 @@ class IndependentScaleGraph(QWidget):
 def main():
     app = QApplication(sys.argv)
     independent_scale_graph = IndependentScaleGraph()
+    independent_scale_graph.show()
     app.exec_()
 
 
