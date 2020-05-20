@@ -317,7 +317,6 @@ class Figure(QWidget):
         a3, b3, c3 = self.find_line_with_two_point(right_segment.p1, right_segment.p2)
         left_intersection = self.find_line_intersection(a1, b1, c1, a2, b2, c2)
         right_intersection = self.find_line_intersection(a2, b2, c2, a3, b3, c3)
-
         return Segment(left_intersection, right_intersection)
 
     def find_line_with_two_point(self, p1, p2):
